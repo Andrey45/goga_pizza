@@ -1,0 +1,28 @@
+{
+  "translations" : "IT",
+  "title": "La migliore pizza della città !!!",
+  "new": "Nuovi articoli",
+  "pizz": "Tutta pizza",
+  "gramm": "gr",
+  "quantity": "Numero di",
+  "button": {
+    "button_pizz": "Pizza",
+    "button_snacks": "Snack",
+    "button_dessert": "Dessert",
+    "button_drinks": "Devande",
+    "button_vk": "VKontakte",
+    "button_insta": "Instagram",
+    "button_user": "Utente",
+    "button_menu": "Menu"
+  },
+  "cards": {
+    "button_order": "Da aggiungere",
+    "button_addcart": "Al carrello"
+  },
+  "basket": {
+    "title_size": "Carrello vuoto",
+    "title": "Cestino",
+    "itog": "Risultato: ",
+    "switch": "Sottile"
+  }
+}

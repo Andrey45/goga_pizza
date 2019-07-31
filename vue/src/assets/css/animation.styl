@@ -1,0 +1,91 @@
+  @import "color.styl"
+  // Animation Navbar
+  @keyframes an
+    from
+      margin-left -20px
+    50%
+      margin-left 20px
+    to
+      margin-left 0
+  @keyframes ani
+    from
+      margin-top -60px
+    to
+      margin-top 0
+  // Animation Home
+  @keyframes text_ani
+    from
+      transform translate(0px,50px) rotate(0deg)
+      opacity 0
+    to
+      transform translate(0px,0px) rotate(0deg)
+      opacity 1
+  @keyframes ani400
+    from
+      margin-left -259px
+    to
+      margin-left -150px
+  @keyframes ani768
+    from
+      margin-left -512px
+    to
+      margin-left -300px
+  @keyframes ani1024
+    from
+      margin-left -680px
+    to
+      margin-left -400px
+  @keyframes ani1080
+    from
+      margin-left -800px
+    to
+      margin-left -500px
+  .im
+    position absolute
+    @media (max-width 400px)
+      max-width 259px
+      max-height 259px
+      margin-top -259px
+    margin-left -150px
+    animation ani400 1s
+    @media (min-width 400px)
+      max-width 259px
+      max-height 259px
+      margin-top -259px
+    margin-left -150px
+    animation ani400 1s
+    @media (min-width 768px)
+      max-width 512px
+      max-height 512px
+      margin-top -512px
+    margin-left -300px
+    animation ani768 1s
+    @media (min-width 1024px)
+      max-width 680px
+      max-height 680px
+      margin-top -680px
+    margin-left -400px
+    animation ani1024 1s
+    @media (min-width 1200px)
+      max-width 100%
+      max-height 800px
+      margin-top -800px
+    margin-left -500px
+    animation ani1080 1s
+  .imi
+    display inline
+    z-index -1
+    width 100%
+    max-height 800px
+  .title_pred
+    margin-left 30%
+    color color-glob
+    position absolute
+    margin-top -25%
+    font-size 60px
+    animation text_ani 2s
+  .title-card
+    color white
+    background-color #605d64
+  .title
+    padding-top 10px

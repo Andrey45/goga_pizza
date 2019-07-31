@@ -1,0 +1,28 @@
+{
+  "translations" : "RU",
+  "title": "Лучшие пиццы в городе!!!",
+  "new": "Новинки",
+  "pizz": "Все пиццы",
+  "gramm": "гр",
+  "quantity": "Количество",
+  "button": {
+    "button_pizz": "Пиццы",
+    "button_snacks": "Закуски",
+    "button_dessert": "Десерты",
+    "button_drinks": "Напитки",
+    "button_vk": "Вконтакте",
+    "button_insta": "Инстаграм",
+    "button_user": "Пользователь",
+    "button_menu": "Меню"
+  },
+  "cards": {
+    "button_order": "Добавить",
+    "button_addcart": "В корзину"
+  },
+  "basket": {
+    "title_size": "Корзина пуста",
+    "title": "Корзина",
+    "itog": "Итог: ",
+    "switch": "Тонкая"
+  }
+}

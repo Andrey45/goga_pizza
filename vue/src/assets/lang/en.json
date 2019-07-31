@@ -1,0 +1,28 @@
+{
+  "translations": "EN",
+  "title": "The best pizza in the city !!!",
+  "new": "New items",
+  "pizz": "All pizzas",
+  "gramm": "gr",
+  "quantity": "Quantity",
+  "button": {
+    "button_pizz": "Pizza",
+    "button_snacks": "Snacks",
+    "button_dessert": "Dessert",
+    "button_drinks": "Drinks",
+    "button_vk": "Vkontakte",
+    "button_insta": "Instagram",
+    "button_user": "User",
+    "button_menu": "Menu"
+  },
+  "cards": {
+    "button_order": "Add",
+    "button_addcart": "Add cart"
+  },
+  "basket": {
+    "title_size": "Cart empty",
+    "title": "Shop Cart",
+    "itog": "Total: ",
+    "switch": "Thin"
+  }
+}

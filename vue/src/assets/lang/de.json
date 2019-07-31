@@ -1,0 +1,28 @@
+{
+  "translations" : "DE",
+  "title": "Die besten Pizzen der Stadt !!!",
+  "new": "Neue Artikel",
+  "pizz": "Alles Pizza",
+  "gramm": "gr",
+  "quantity": "Anzahl der",
+  "button": {
+    "button_pizz": "Pizza",
+    "button_snacks": "Snacks",
+    "button_dessert": "Desserts",
+    "button_drinks": "Getränke",
+    "button_vk": "Vkontakte",
+    "button_insta": "Instagram",
+    "button_user": "Benutzer",
+    "button_menu": "Menü"
+  },
+  "cards": {
+    "button_order": "Zu bestellen",
+    "button_addcart": "In den Korb"
+  },
+  "basket": {
+    "title_size": "Warenkorb leer",
+    "title": "Einkaufswagen",
+    "itog": "Ergebnis: ",
+    "switch": "Dünn"
+  }
+}

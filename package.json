@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "vuetify": "^2.0.1"
+  },
+  "devDependencies": {
+    "sass": "^1.22.7",
+    "sass-loader": "^7.1.0",
+    "vue-cli-plugin-vuetify": "https://github.com/vuetifyjs/vue-cli-plugin-vuetify.git#dev",
+    "vuetify-loader": "^1.2.2"
+  }
+}
