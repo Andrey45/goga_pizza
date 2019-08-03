@@ -16,7 +16,7 @@
 export default {
   data(){
     return{
-      overlay: false,
+      dialog: false,
       types: ['hex', 'hexa', 'rgba', 'hsla', 'hsva'],
       type: 'hex',
       hex: '#FF00FF',
