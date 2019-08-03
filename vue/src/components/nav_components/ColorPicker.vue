@@ -7,11 +7,11 @@
       v-container(grid-list-xl='')
         v-layout(wrap='')
           v-flex(d-flex='', justify-center='')
-            v-color-picker(v-model='color')
+            v-color-picker(v-model='color' show-swatches)
       | {{ this.setcolor(showColor) }}
 </template>
 
-<script>
+<script>git
   import { mapGetters, mapMutations } from "vuex"
 export default {
   data(){
