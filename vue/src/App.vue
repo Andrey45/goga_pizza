@@ -2,7 +2,7 @@
   v-app.app
     navbar
     v-content
-      transition( name="router-anim", enter-to-class="animated fliInpY", leave-to-class="animated flipOutY")
+      transition( name="slide")
         router-view
 </template>
 
@@ -14,7 +14,6 @@ export default {
   components: {Navbar},
   data(){
     return{
-      transitionName: 'slide-left',
       sag:[],
       color: ''
     }
@@ -23,20 +22,25 @@ export default {
     //localStorage.removeItem('color_site')
     this.sag = this.appPizzas
     console.log(this.Colors)
-  },
-  methods:{
-    beforeRouteUpdate (to, from, next) {
-      const toDepth = to.path.split('/').length
-      const fromDepth = from.path.split('/Pizza').length
-      this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
-      next()
-    }
   }
 }
 </script>
 <style scoped lang="stylus">
   @import "~animate.css"
+  // transition
+  .slide-enter-active
 
+  .slide-leave-active
+    transition opacity .5s
+  .slide-enter
+
+  .slide-leave-to
+    opacity 0
+
+    // app
   .app
     background-color #212121
+  .pege
+    position fixed
+    float inherit
 </style>

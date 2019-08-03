@@ -11,7 +11,7 @@
       | {{ this.setcolor(showColor) }}
 </template>
 
-<script>git
+<script>
   import { mapGetters, mapMutations } from "vuex"
 export default {
   data(){
