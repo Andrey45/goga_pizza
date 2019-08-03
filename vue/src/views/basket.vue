@@ -1,42 +1,45 @@
 <template lang="pug">
   v-container
-    .display-2 {{$t('basket.title')}}
-    v-list.lis-total.orange(v-if="!data")
+    .display-2.mb-3.grey--text {{$t('basket.title')}}
+    v-divider(:color="Colors")
+    v-layout(row, wrap)
+      v-flex.mt-3(xs12, sm6, md4, lg3, v-for="props in appPizzas")
+        v-hover
+          v-card.ma-4(dark, flat, slot-scope="{ hover }", :class="`elevation-${hover ? 12 : 2}`")
+            v-card-text.text-center.title(:color="Colors") {{props.name}}
+            v-divider(:color="Colors")
+            v-img(:src="require('../assets/img/pizza/'+props.imeg)", height="200", width="100%")
+            v-responsive.pt-4
+            v-divider(:color="Colors")
+            v-card-text.text-center Колличество
+            v-card-actions
+              v-btn.title(icon, @click="minus(props)" :color="Colors") -
+              | {{props.quantity}}
+              v-btn.title(icon, @click="plus(props)" :color="Colors") +
+              v-spacer
+              v-btn(icon, @click="del(props.id)", :color="Colors")
+                v-icon(:color="Colors") delete_forever
+            v-divider(:color="Colors")
+            v-card-text.text-sm-center(v-bind:style="{color: Colors }") {{$t('basket.itog')}}
+              div.total(v-bind:style="{color: colo}") {{$n(props.total, 'currency')}}
+    v-divider(:color="Colors")
+    v-list(dark)
       v-list-item
-        v-list-item-content {{$t('basket.title_size')}}
-    v-list.lis(subheader, v-for="props in appPizzas", dark)
-      v-list-item
-        .title.font-weight-bold.font-italic {{props.name}}
+        v-btn(outlined, :color="Colors") {{$t('cards.button_order')}}
         v-spacer
-        v-list-item-avatar(size="80")
-          v-btn(icon, @click="minus(props)") -
-          | {{props.quantity}}
-          v-btn(icon, @click="plus(props)") +
-        v-spacer
-        v-list-item-avatar(size="80")
-          v-list-item {{$n(props.total, 'currency')}}
-        v-spacer
-        v-list-item-avatar(size="50")
-          v-btn(icon, @click="del(props.id)")
-            v-icon(color="orange") delete_forever
-    v-divider
-    v-list.lis-total.orange
-      v-list-item
-        v-btn {{$t('cards.button_order')}}
-        v-spacer
-        v-list-item-avatar.pr-2(max-width="200", min-width="140")
-          v-list-item
-          .text {{$t('basket.itog')}}
-          .text &nbsp{{$n(total(), 'currency')}}
+        div(v-bind:style="{color: Colors }") {{$t('basket.itog')}}
+          div.total(v-bind:style="{color: colo}") {{$n(total(), 'currency')}}
+
 </template>
 
 <script>
 import { mapGetters, mapMutations } from 'vuex'
 export default {
-  computed: mapGetters(['appPizzas']),
+  computed: mapGetters(['appPizzas', 'Colors']),
   data () {
     return {
-      data: true
+      data: true,
+      colo: '#F8FCF8'
     }
   },
   mounted(){
@@ -86,15 +89,6 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-.v-list__tile__sub-title
-  height 40
-.v-input__slot
-  margin-bottom  0
-.lis
-  margin-top 10px
-.lis-total
-  margin-top 20px
-  .text
-    color white
-
+  .total
+    display inline-block
 </style>
