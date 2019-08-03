@@ -1,7 +1,7 @@
 <template lang="pug">
   v-menu(bottom, origin="center center", transition="scale-transition")
     template(v-slot:activator='{ on }')
-      v-btn.orange(dark, v-on='on', icon)
+      v-btn( :color="Colors" dark, v-on='on', outlined, icon, max-width="34", max-height="34")
         | {{$t('translations')}}
     v-list
       v-list-item(v-for='(item, index) in lang', :key='index', @click='lan(item.locale)')
@@ -11,6 +11,7 @@
 <script>
   import {mapMutations, mapActions, mapGetters} from 'vuex'
 export default {
+  computed: mapGetters(['Colors']),
   data(){
     return{
       lang:[

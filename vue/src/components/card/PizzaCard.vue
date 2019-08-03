@@ -10,7 +10,7 @@
             v-card-title.title-card
               div
                 .headline {{pizz.name}}
-                v-rating(v-model="pizz.stars" background-color="yellow accent-2" color="yellow accent-2" small)
+                //v-rating(v-model="pizz.stars" color="amber" half-increments dense size="14" eadonly)
                 .body-2
                   .div-text(v-for="nam in pizz.inged.ingredients")
                     .div-text &nbsp{{nam.name}},

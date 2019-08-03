@@ -4,32 +4,35 @@
         v-toolbar-title
           v-img.logo-text(:src="require('../assets/img/navbar/logo-text.svg')")
         .title-but
-          v-btn.btn(text, v-for="link in links" :key="link.title" router, :to="link.url") {{$t('button.'+link.title)}}
+          transition-group(name="fadeInLeft" appear enter-to-class="animated fadeInLeft", leave-to-class="animated fadeOutLeft", :duration="{ enter: 4000, leave: 4400 }")
+            v-btn(:color="Colors" text, v-for="link in links" :key="link.title" router, :to="link.url") {{$t('button.'+link.title)}}
         v-spacer
         BtnShopCart
         v-tooltip(bottom, v-for="ico in icon" :key="ico.icons")
           template(v-slot:activator="{ on }")
             v-btn.bt-icon(icon, v-on="on")
-              img(:src="require('../assets/img/navbar/'+ico.icons+'')")
+              v-icon(:color="Colors" size="34") {{ico.icons}}
           span {{$t('button.'+ico.title)}}
         DropMenu
         DropTranslation
-
+        ColorPicker
 </template>
 
 <script>
+  import ColorPicker from './nav_components/ColorPicker'
 import BtnShopCart from './nav_components/BtnShopCart'
 import DropMenu from './nav_components/DropMenu'
 import DropTranslation from './nav_components/DropTranslation'
-//import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
-  components:{DropTranslation, DropMenu, BtnShopCart},
+  computed: mapGetters(['Colors']),
+  components:{DropTranslation, DropMenu, BtnShopCart, ColorPicker},
   data () {
     return {
       icon: [
-        { icons: 'vk.png', title: 'button_vk' },
-        { icons: 'insta.png', title: 'button_insta' },
-        { icons: 'user.png', title: 'button_user' }
+        { icons: 'fab fa-vk', title: 'button_vk' },
+        { icons: 'fab fa-instagram', title: 'button_insta' },
+        { icons: 'fas fa-user-tie', title: 'button_user' }
 
       ],
       links: [
@@ -44,8 +47,10 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+  @import "~animate.css"
   @import "../assets/css/color.styl"
   @import "../assets/css/animation.styl"
+
   .logo-text
     width 200px
     height 50px

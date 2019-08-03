@@ -5,6 +5,7 @@ import pizznew from './pizz-new/pizz-new'
 import pizz from './pizz/pizz'
 import snacks from './snacks/snacks'
 import lang from './lang'
+import color from './color'
 Vue.use(Vuex)
 export default new Vuex.Store({
   modules: {
@@ -12,6 +13,7 @@ export default new Vuex.Store({
     pizznew,
     pizz,
     lang,
-    snacks
+    snacks,
+    color
   }
 })

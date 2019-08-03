@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  div.page
     new-pizza-card
     .display-3.font-weight-regular.font-italic.text-center.orange--text {{$t('pizz')}}
     PizzaCard

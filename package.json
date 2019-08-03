@@ -3,6 +3,7 @@
     "vuetify": "^2.0.1"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.10.1",
     "sass": "^1.22.7",
     "sass-loader": "^7.1.0",
     "vue-cli-plugin-vuetify": "https://github.com/vuetifyjs/vue-cli-plugin-vuetify.git#dev",
