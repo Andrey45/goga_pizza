@@ -4,9 +4,9 @@
       v-btn(dark, v-on="on" , @click="dialog=true", :color="Colors", icon)
         v-img(:src="require('../../assets/img/navbar/color.svg')" max-width="34")
     v-card(color="grey darken-3")
-      v-container(grid-list-xl='')
-        v-layout(wrap='')
-          v-flex(d-flex='', justify-center='')
+      v-container(grid-list-xl)
+        v-layout(wrap)
+          v-flex(d-flex, justify-center)
             v-color-picker(v-model='color' show-swatches)
       | {{ this.setcolor(showColor) }}
 </template>

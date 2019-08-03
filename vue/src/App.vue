@@ -2,7 +2,7 @@
   v-app.app
     navbar
     v-content
-      transition( name="router-anim", enter-to-class="animated fadeInLeft", leave-to-class="animated fadeOutLeft")
+      transition( name="router-anim", enter-to-class="animated fliInpY", leave-to-class="animated flipOutY")
         router-view
 </template>
 
