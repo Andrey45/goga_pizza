@@ -14,17 +14,18 @@
                   | 35 cm
             v-responsive.pt-4
             v-divider(:color="Colors")
-            v-card-text.text-center Колличество
             v-card-actions
+              .text-center Колличество
+              v-spacer
               v-btn.title(icon, @click="minus(props)" :color="Colors") -
               | {{props.quantity}}
               v-btn.title(icon, @click="plus(props)" :color="Colors") +
+            v-divider(:color="Colors")
+            v-card-actions(v-bind:style="{color: Colors }") {{$t('basket.itog')}}
+              .total(v-bind:style="{color: colo}") &nbsp;{{$n(props.total, 'currency')}}
               v-spacer
               v-btn(icon, @click="del(props.id)", :color="Colors")
                 v-icon(:color="Colors") delete_forever
-            v-divider(:color="Colors")
-            v-card-text.text-sm-center(v-bind:style="{color: Colors }") {{$t('basket.itog')}}
-              div.total(v-bind:style="{color: colo}") {{$n(props.total, 'currency')}}
     v-divider(:color="Colors")
     v-list(dark)
       v-list-item
@@ -43,7 +44,8 @@ export default {
     return {
       data: true,
       colo: '#F8FCF8',
-      height: '100%'
+      height: '100%',
+      display: 'inline-block'
     }
   },
   mounted(){

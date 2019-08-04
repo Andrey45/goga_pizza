@@ -17,9 +17,10 @@
                 .body-2
                   .div-text(v-for="nam in pizz.inged.ingredients")
                     .div-text &nbsp{{nam.name}},
-                .title {{ $n(total(pizz.inged), 'currency')}}
             v-card-actions
               Shopdialog(:data="pizz", :ingredients="pizz.inged.ingredients")
+              v-spacer
+              .title.pr-3 {{ $n(total(pizz.inged), 'currency')}}
 </template>
 
 <script>
