@@ -4,14 +4,16 @@
     v-content
       transition( name="slide")
         router-view
+    foote
 </template>
 
 <script>
 import Navbar from "./components/navbar";
+import foote from "./components/footer"
 import { mapGetters } from "vuex"
 export default {
   computed: mapGetters(['appPizzas','Colors']),
-  components: {Navbar},
+  components: {Navbar, foote},
   data(){
     return{
       sag:[],

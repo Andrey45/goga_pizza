@@ -1,7 +1,7 @@
 <template lang="pug">
   v-dialog(dark, max-width="800", v-model="dialog")
     template(v-slot:activator="{ on }")
-      v-btn(dark, v-on="on" , @click="dialog=true" outlined, color="orange")
+      v-btn(dark, v-on="on" , @click="dialog=true" outlined, :color="Colors")
         | {{$t('cards.button_addcart')}}
     v-card(color="grey darken-3")
       v-container
@@ -24,8 +24,9 @@
 </template>
 
 <script>
-  import { mapMutations } from "vuex"
+  import { mapMutations, mapGetters } from "vuex"
   export default {
+    computed: mapGetters(['Colors']),
     props:['ingredients','data'],
     data () {
       return {

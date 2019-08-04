@@ -19,7 +19,7 @@ export default {
       dialog: false,
       types: ['hex', 'hexa', 'rgba', 'hsla', 'hsva'],
       type: 'hex',
-      hex: '#FF9800',
+      hex: localStorage.color_site,
       hexa: '#FF00FFFF',
       rgba: { r: 255, g: 0, b: 255, a: 1 },
       hsla: { h: 300, s: 1, l: 0.5, a: 1 },

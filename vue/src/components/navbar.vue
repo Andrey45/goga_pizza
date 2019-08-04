@@ -8,11 +8,6 @@
             v-btn(:color="Colors" text, v-for="link in links" :key="link.title" router, :to="link.url") {{$t('button.'+link.title)}}
         v-spacer
         BtnShopCart
-        v-tooltip(bottom, v-for="ico in icon" :key="ico.icons")
-          template(v-slot:activator="{ on }")
-            v-btn.bt-icon(icon, v-on="on")
-              v-icon(:color="Colors" size="34") {{ico.icons}}
-          span {{$t('button.'+ico.title)}}
         DropMenu
         DropTranslation
         ColorPicker
@@ -33,7 +28,6 @@ export default {
         { icons: 'fab fa-vk', title: 'button_vk' },
         { icons: 'fab fa-instagram', title: 'button_insta' },
         { icons: 'fas fa-user-tie', title: 'button_user' }
-
       ],
       links: [
         { title: 'button_pizz', url: '/Pizza' },

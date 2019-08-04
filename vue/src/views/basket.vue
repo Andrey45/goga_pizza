@@ -4,11 +4,14 @@
     v-divider(:color="Colors")
     v-layout(row, wrap)
       v-flex.mt-3(xs12, sm6, md4, lg3, v-for="props in appPizzas")
-        v-hover
-          v-card.ma-4(dark, flat, slot-scope="{ hover }", :class="`elevation-${hover ? 12 : 2}`")
+        v-hover(v-slot:default="{ hover }")
+          v-card.ma-4(dark, flat)
             v-card-text.text-center.title(:color="Colors") {{props.name}}
             v-divider(:color="Colors")
-            v-img(:src="require('../assets/img/pizza/'+props.imeg)", height="200", width="100%")
+            v-img(:src="require('../assets/img/pizza/'+props.imeg)", height="200", width="100%" :aspect-ratio="16/9")
+              v-expand-transition
+                .d-flex.transition-fast-in-fast-out.darken-2.v-card--reveal.display-3.white--text(v-bind:style="{ backgroundColor: Colors, height: height }", v-if='hover')
+                  | 35 cm
             v-responsive.pt-4
             v-divider(:color="Colors")
             v-card-text.text-center Колличество
@@ -39,7 +42,8 @@ export default {
   data () {
     return {
       data: true,
-      colo: '#F8FCF8'
+      colo: '#F8FCF8',
+      height: '100%'
     }
   },
   mounted(){
@@ -91,4 +95,11 @@ export default {
 <style scoped lang="stylus">
   .total
     display inline-block
+  .v-card--reveal
+    align-items center
+    bottom 0
+    justify-content center
+    opacity .5
+    position absolute
+    width 100%
 </style>
