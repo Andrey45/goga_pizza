@@ -6,21 +6,21 @@
     v-card(color="grey darken-3")
       v-container
         v-card-text
-          .display-3.orange--text {{data.name}}
+          .display-3(v-bind:style="{color: Colors}") {{data.name}}
         v-divider
         v-layout(wrap)
           v-flex(xs6,  v-for="nem in ingredients")
-            v-subheader.orange--text.pb-3 {{nem.name}}: {{nem.stn_quantity}}{{$t('gramm')}}
-            v-slider.pl-2(v-model="nem.stn_quantity" :min="nem.min_quantity" :max="nem.max_quantity" :thumb-size="20" thumb-label="always" color="orange")
+            v-subheader.pb-3(v-bind:style="{color: Colors}") {{nem.name}}: {{nem.stn_quantity}}{{$t('gramm')}}
+            v-slider.pl-2(v-model="nem.stn_quantity" :min="nem.min_quantity" :max="nem.max_quantity" :thumb-size="20" thumb-label="always" :color="Colors")
               template(v-slot:prepend)
-                v-icon(size="16" color="orange" @click="decrement(nem)") mdi-minus
+                v-icon(size="16" :color="Colors" @click="decrement(nem)") mdi-minus
               template(v-slot:append)
-                v-icon(size="16" color="orange" @click="increment(nem)") mdi-plus
-        v-text-field(color="orange", :label="$t('quantity')", placeholder="Placeholder", outlined, v-model="quenti")
+                v-icon(size="16" :color="Colors" @click="increment(nem)") mdi-plus
+        v-text-field(:color="Colors", :label="$t('quantity')", placeholder="Placeholder", outlined, v-model="quenti")
         v-divider
         v-card-actions
-          v-btn(@click="add(total(quenti), data, ingredients, quenti, price())", @click.stop="dialog=false" outlined, color="orange") {{$t('cards.button_order')}}
-          v-container.orange--text.text-right {{$t('basket.itog')}} {{$n(total(quenti), 'currency')}}
+          v-btn(@click="add(total(quenti), data, ingredients, quenti, price())", @click.stop="dialog=false" outlined, :color="Colors") {{$t('cards.button_order')}}
+          v-container.text-right(v-bind:style="{color: Colors}") {{$t('basket.itog')}} {{$n(total(quenti), 'currency')}}
 </template>
 
 <script>

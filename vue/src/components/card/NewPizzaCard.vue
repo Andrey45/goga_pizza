@@ -8,6 +8,7 @@
               v-expand-transition
                 .d-flex.transition-fast-in-fast-out.darken-2.v-card--reveal.display-3.white--text(v-bind:style="{ backgroundColor: Colors, height: height }", v-if='hover')
                   | 35 cm
+            v-btn.white--text(absolute :color="Colors" fab large right top) New
             v-responsive.pt-4
             v-divider
             v-card-title.title-card

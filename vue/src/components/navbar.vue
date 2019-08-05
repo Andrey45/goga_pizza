@@ -1,8 +1,7 @@
 <template lang="pug">
     div
       v-app-bar.nav(app, color="grey darken-4")
-        v-toolbar-title
-          v-img.logo-text(:src="require('../assets/img/navbar/logo-text.svg')")
+        text-svg
         .title-but
           transition-group(name="fadeInLeft" appear enter-to-class="animated fadeInLeft", leave-to-class="animated fadeOutLeft", :duration="{ enter: 4000, leave: 4400 }")
             v-btn(:color="Colors" text, v-for="link in links" :key="link.title" router, :to="link.url") {{$t('button.'+link.title)}}
@@ -19,9 +18,10 @@ import BtnShopCart from './nav_components/BtnShopCart'
 import DropMenu from './nav_components/DropMenu'
 import DropTranslation from './nav_components/DropTranslation'
 import { mapGetters } from 'vuex'
+  import TextSvg from "./nav_components/text-svg";
 export default {
   computed: mapGetters(['Colors']),
-  components:{DropTranslation, DropMenu, BtnShopCart, ColorPicker},
+  components:{TextSvg, DropTranslation, DropMenu, BtnShopCart, ColorPicker},
   data () {
     return {
       icon: [

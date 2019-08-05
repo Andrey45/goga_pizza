@@ -1,7 +1,7 @@
 <template lang="pug">
   v-menu(bottom, origin="center center", transition="scale-transition")
     template(v-slot:activator='{ on }')
-      v-btn( :color="Colors" dark, v-on='on', outlined, icon, max-width="34", max-height="34")
+      v-btn(icon, :color="Colors" dark, v-on='on', outlined, max-width="34", max-height="34")
         | {{$t('translations')}}
     v-list
       v-list-item(v-for='(item, index) in lang', :key='index', @click='lan(item.locale)')

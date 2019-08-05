@@ -1,7 +1,7 @@
 <template lang="pug">
-  div.page
+  div.pag
     new-pizza-card
-    .display-3.font-weight-regular.font-italic.text-center(v-bind:style="{ color: Colors }") {{$t('pizz')}}
+    .titl_e(v-bind:style="{ color: Colors }") {{$t('pizz')}}
     PizzaCard
 </template>
 
@@ -16,5 +16,11 @@ export default {
 </script>
 
 <style scoped lang="stylus">
-
+  .pag
+    margin-top 20px
+  .titl_e
+    text-align center !important
+    font-family "Roboto", sans-serif !important
+    font-size 3.75rem !important
+    font-style italic !important
 </style>

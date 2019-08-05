@@ -42,7 +42,4 @@ export default {
     // app
   .app
     background-color #212121
-  .pege
-    position fixed
-    float inherit
 </style>

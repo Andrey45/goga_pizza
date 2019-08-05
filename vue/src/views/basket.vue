@@ -15,7 +15,7 @@
             v-responsive.pt-4
             v-divider(:color="Colors")
             v-card-actions
-              .text-center Колличество
+              .text-center {{$t('basket.quantity')}}
               v-spacer
               v-btn.title(icon, @click="minus(props)" :color="Colors") -
               | {{props.quantity}}
